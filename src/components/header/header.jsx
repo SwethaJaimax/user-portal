@@ -18,8 +18,9 @@
     const title = routeTitles[location.pathname] || "Page";
 
     return (
-  <header className="mb-6 border-b border-gray-300 pb-3 m-2 px-6 sm:px-6 lg:px-8 w-full">
-    <h1 className="text-2xl pl-5 sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+  <header className="mb-6 border-b border-white-100 pb-3 m-2 px-9 sm:px-6 lg:px-8 w-full">
+
+    <h1 className="text-2xl pl-5 sm:text-3xl md:text-4xl font-extrabold 	text-white">
       {title}
     </h1>
   </header>

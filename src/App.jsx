@@ -22,11 +22,11 @@ function App() {
     <div className="h-screen bg-gray-50 flex">
       <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
       <main
-        className="flex-1 flex flex-col p-2"
+        className="flex-1 bg-[#084e54] flex flex-col p-2"
         
       >
         <Header />
-        <div className="flex-1 overflow-auto">
+        <div className="flex-1 overflow-auto hide-scrollbar">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/wallet" element={<Wallet />} />

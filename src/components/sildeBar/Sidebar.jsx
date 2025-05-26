@@ -35,9 +35,9 @@ function Sidebar() {
   useEffect(() => {
     function handleResize() {
       setIsMobile(window.innerWidth < 768);
-     
+
       if (window.innerWidth >= 768) {
-        setIsOpen(true); 
+        setIsOpen(true);
       } else {
         setIsOpen(false);
       }
@@ -63,10 +63,10 @@ function Sidebar() {
     );
   }
 
-  // Else, show full sidebar
+
   return (
     <>
-      {/* Overlay on mobile when sidebar open */}
+
       {isMobile && isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40"
@@ -74,50 +74,46 @@ function Sidebar() {
         />
       )}
 
-     <aside
-  className={`
-    fixed top-0 left-0 h-screen bg-white border-r border-gray-200 flex flex-col z-40
+      <aside
+        className={`
+    fixed top-0 left-0 h-screen  bg-[#084e54]  border-r border-gray-200 flex flex-col z-40
     transition-all duration-300 ease-in-out
     ${isOpen ? "w-86" : "w-20"}
-    md:relative md:translate-x-0 md:w-auto
+    md:relative md:translate-x-0 md:w-auto 
   `}
-  style={{ minWidth: isOpen ? "19rem" : "5rem" }}
->
+        style={{ minWidth: isOpen ? "19rem" : "5rem" }}
+      >
 
-        {/* Sidebar header */}
+
         <div
-          className={`flex items-center justify-between p-5 border-b border-gray-200 ${
-            isOpen ? "" : "justify-center"
-          }`}
+          className={`flex items-center justify-between p-3  border-gray-200 ${isOpen ? "" : "flex-start"
+            }`}
         >
           <div
-            className={`flex items-center gap-3 ${
-              isOpen ? "" : "justify-center w-full"
-            }`}
+            className={`flex items-center gap-1 ${isOpen ? "" : "justify-center w-full"
+              }`}
           >
             {isOpen && (
-              <h1 className="text-2xl font-bold text-gray-900 select-none">JAIMAX</h1>
+              <h1 className="text-2xl font-bold text-white select-none">JAIMAX</h1>
             )}
           </div>
 
-          {/* Hamburger toggle - always visible */}
-          <div className="ml-auto">
+          <div className="p-4 bg-[#084e54] text-white">
             <Hamburger
               toggled={isOpen}
               toggle={setIsOpen}
               size={28}
-              color="#16A34A"
+              color="white"
               label="Toggle sidebar"
             />
           </div>
         </div>
 
-        {/* Navigation menu */}
-        <nav className="flex-1 overflow-y-auto space-y-1 p-3">
+
+        <nav className="flex-1 overflow-y-auto hide-scrollbar space-y-1 p-2">
           <p
-            className={`text-xs text-gray-500 uppercase font-semibold px-3 mb-4 select-none ${
-              isOpen ? "" : "hidden"
-            }`}
+            className={`text-xs text-white uppercase font-semibold px-3 mb-4 select-none ${isOpen ? "" : "hidden"
+              }`}
           >
             Menu
           </p>
@@ -127,15 +123,14 @@ function Sidebar() {
               key={item.name}
               to={item.path}
               onClick={handleNavClick}
-              className={`flex items-center gap-5 px-4 py-3 rounded-lg font-semibold transition-colors ${
-                location.pathname === item.path
-                  ? "bg-green-50 text-green-700 border-l-4 border-green-600 pl-3"
-                  : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
-              }`}
+              className={`flex items-center gap-5 px-4 py-2 rounded-lg font-semibold transition-colors `}
               title={!isOpen ? item.name : undefined}
             >
-              <span className="text-2xl">{item.icon}</span>
-              <span className={`${isOpen ? "block" : "hidden"} text-base`}>{item.name}</span>
+              <span className={`text-2xl px-4 py-1 rounded-lg   ${location.pathname === item.path
+                ? "bg-green-50 text-white-700 px-4 py-3 rounded-lg  border-l-4 border-green-600 pl-3"
+                : "text-white "
+                } `}>{item.icon}</span>
+              <span className={`text-white ${isOpen ? "block" : "hidden"} text-base`}>{item.name}</span>
             </Link>
           ))}
         </nav>
