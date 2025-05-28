@@ -8,7 +8,7 @@ const ActionButtons = () => (
       
       {/* Left: Profile Info */}
       <div className="flex gap-4 items-center">
-        <img src="https://jaimax.com/images/nav-logo.png" alt="profile" className="w-14 h-14 object-cover" />
+        <img src={assets.welcomeDraw} alt="profile" className="w-14 h-14 object-cover" />
         <div>
           <h2 className="text-xl text-white font-semibold">KN</h2>
           <h1 className="text-2xl font-bold text-white">Welcome to Jaimax</h1>

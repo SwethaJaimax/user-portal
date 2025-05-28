@@ -15,6 +15,8 @@ const Profile = () => {
     newpassword: ''
   });
 
+  // console.log(formData)
+
   const [errors, setErrors] = useState({});
   const [passwordErrors, setPasswordErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);

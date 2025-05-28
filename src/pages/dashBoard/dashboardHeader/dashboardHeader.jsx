@@ -13,7 +13,7 @@ const DashboardHeader = () => (
                   max-w-none
                   mx-0
                   ">
-                    
+
         <input
             type="text"
             placeholder="Search task"
