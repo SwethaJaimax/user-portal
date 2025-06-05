@@ -5,7 +5,7 @@ import { TextField, InputAdornment } from "@mui/material";
 const ActionButtons = () => (
   <div className="rounded-lg shadow-md z-10 p-3 bg-[#084e54] w-full">
     <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-      
+
       {/* Left: Profile Info */}
       <div className="flex gap-4 items-center">
         <img src={assets.welcomeDraw} alt="profile" className="w-14 h-14 object-cover" />
@@ -17,7 +17,7 @@ const ActionButtons = () => (
 
       {/* Right: Action Buttons */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full sm:w-auto">
-        
+
         {/* Referral Code */}
         <TextField
           label="Referral Code"
@@ -49,7 +49,6 @@ const ActionButtons = () => (
           }}
         />
 
-        {/* Download Button */}
         <button className="bg-white flex items-center px-4 py-2 rounded-full text-sm font-medium shadow hover:bg-gray-100 transition">
           <FaDownload className="mr-2" /> Import Data
         </button>

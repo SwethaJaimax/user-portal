@@ -1,9 +1,9 @@
 
 const TimeTracker = () => (
-  <div className="bg-green-900 p-4 rounded-xl shadow-sm w-full    h-130 max-w-md mx-auto md:mx-0"  
-  
-   style={{
-      background : "linear-gradient(111deg, #096d6f, #40c9c6)"
+  <div className="bg-green-900 p-4 rounded-xl shadow-sm w-full    h-130 max-w-md mx-auto md:mx-0"
+
+    style={{
+      background: "linear-gradient(111deg, #096d6f, #40c9c6)"
     }}>
     <div className="font-semibold mb-2 text-center md:text-left">Time Tracker</div>
     <div className=" text-white p-4 rounded-xl text-center">

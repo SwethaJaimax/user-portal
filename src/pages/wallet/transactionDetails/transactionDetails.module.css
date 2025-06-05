@@ -16,7 +16,6 @@
   @apply px-3 py-2 rounded-full border border-white text-black focus:outline-none w-full max-w-xs flex-shrink;
 }
 
-/* Scrollbar hidden but allow scroll */
 .hideScrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -27,14 +26,16 @@
 }
 
 .tableWrapper {
-  @apply hideScrollbar rounded-lg   shadow flex-grow overflow-x-auto min-w-0;
+  @apply hideScrollbar rounded-lg shadow flex-grow overflow-x-auto min-w-0;
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed; /* fixed layout for stable columns */
+  table-layout: fixed;
+  /* fixed layout for stable columns */
 }
+
 /* 
 .thead {
     @apply border-2 border-black text-white;
@@ -42,28 +43,30 @@
 
 .thead {
   @apply border-2 text-white;
-  border-color: rgba(255, 255, 255, 0.5); 
+  border-color: rgba(255, 255, 255, 0.5);
 }
+
 /* 
 
 .th {
   @apply px-3 py-2  font-medium text-white text-xs whitespace-nowrap;
 } */
 
-.th{
-@apply border-2 text-white;
+.th {
+  @apply border-2 text-white;
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Smaller first column */
+
 .thFirst {
   min-width: 40px;
 }
 
-/* Shrink header font size on smaller screens */
+
 @media (max-width: 640px) {
   .th {
-    font-size: 0.75rem; /* reduce font size */
+    font-size: 0.75rem;
+    /* reduce font size */
   }
 }
 
@@ -76,7 +79,7 @@
 }
 
 .trOdd {
- @apply border-2 border-black text-white;
+  @apply border-2 border-black text-white;
 }
 
 .trEven {

@@ -7,7 +7,7 @@ const TopCards = () => {
     { label: "Total Coins", value: 24, image: assets.totalCoins, shapes: ['circle', 'triangle'] },
     { label: "Wallet Balance", value: 10, image: assets.walletBal, shapes: ['square', 'diamond'] },
     { label: "Available Balance", value: 12, image: assets.available, shapes: ['pentagon', 'ellipse'] },
-    { label: "Referral Earnings", value: 2, image: 'https://jaimax.com/images/myReferral.svg', shapes: ['hexagon', 'circle'] },
+    { label: "Referral Earnings", value: 2, image: assets.referal, shapes: ['hexagon', 'circle'] },
     { label: "Active Members", value: 2, image: assets.activememo, shapes: ['triangle', 'square'] },
     { label: "Withdrawal Amount", value: 1000, image: assets.withdraw, shapes: ['diamond', 'pentagon'] },
     { label: "Super Bonus", value: 2, image: assets.superBonus, shapes: ['ellipse', 'hexagon'] },

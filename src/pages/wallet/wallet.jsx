@@ -99,7 +99,7 @@ const transactionData = [
     updatedBy: "User",
     updatedOn: "24-04-2025 11:25 AM",
   },
-    {
+  {
     sno: 7,
     transactionId: "897LMNP",
     amount: "₹75.00",
@@ -112,7 +112,7 @@ const transactionData = [
     updatedBy: "User",
     updatedOn: "24-04-2025 11:25 AM",
   },
-    {
+  {
     sno: 7,
     transactionId: "897LMNP",
     amount: "₹75.00",
@@ -125,7 +125,7 @@ const transactionData = [
     updatedBy: "User",
     updatedOn: "24-04-2025 11:25 AM",
   },
-    {
+  {
     sno: 7,
     transactionId: "897LMNP",
     amount: "₹75.00",
@@ -138,7 +138,7 @@ const transactionData = [
     updatedBy: "User",
     updatedOn: "24-04-2025 11:25 AM",
   },
-    {
+  {
     sno: 7,
     transactionId: "897LMNP",
     amount: "₹75.00",
@@ -151,7 +151,7 @@ const transactionData = [
     updatedBy: "User",
     updatedOn: "24-04-2025 11:25 AM",
   },
-    {
+  {
     sno: 7,
     transactionId: "897LMNP",
     amount: "₹75.00",
@@ -164,7 +164,7 @@ const transactionData = [
     updatedBy: "User",
     updatedOn: "24-04-2025 11:25 AM",
   },
-    {
+  {
     sno: 7,
     transactionId: "897LMNP",
     amount: "₹75.00",
@@ -177,7 +177,7 @@ const transactionData = [
     updatedBy: "User",
     updatedOn: "24-04-2025 11:25 AM",
   },
-    {
+  {
     sno: 7,
     transactionId: "897LMNP",
     amount: "₹75.00",
@@ -190,7 +190,7 @@ const transactionData = [
     updatedBy: "User",
     updatedOn: "24-04-2025 11:25 AM",
   },
-    {
+  {
     sno: 7,
     transactionId: "897LMNP",
     amount: "₹75.00",
@@ -203,7 +203,7 @@ const transactionData = [
     updatedBy: "User",
     updatedOn: "24-04-2025 11:25 AM",
   },
-    {
+  {
     sno: 7,
     transactionId: "897LMNP",
     amount: "₹75.00",
@@ -216,7 +216,7 @@ const transactionData = [
     updatedBy: "User",
     updatedOn: "24-04-2025 11:25 AM",
   },
-    {
+  {
     sno: 7,
     transactionId: "897LMNP",
     amount: "₹75.00",
@@ -229,7 +229,7 @@ const transactionData = [
     updatedBy: "User",
     updatedOn: "24-04-2025 11:25 AM",
   },
-    {
+  {
     sno: 7,
     transactionId: "897LMNP",
     amount: "₹75.00",
@@ -242,7 +242,7 @@ const transactionData = [
     updatedBy: "User",
     updatedOn: "24-04-2025 11:25 AM",
   },
-    {
+  {
     sno: 7,
     transactionId: "897LMNP",
     amount: "₹75.00",
@@ -255,7 +255,7 @@ const transactionData = [
     updatedBy: "User",
     updatedOn: "24-04-2025 11:25 AM",
   },
-    {
+  {
     sno: 7,
     transactionId: "897LMNP",
     amount: "₹75.00",
@@ -267,7 +267,7 @@ const transactionData = [
     reason: "Bill Payment",
     updatedBy: "User",
     updatedOn: "24-04-2025 11:25 AM",
-  } 
+  }
 ];
 
 const Wallet = () => {

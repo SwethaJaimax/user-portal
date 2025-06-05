@@ -27,22 +27,23 @@
 }
 
 .tableWrapper {
-  @apply hideScrollbar rounded-lg   shadow flex-grow overflow-x-auto min-w-0;
+  @apply hideScrollbar rounded-lg shadow flex-grow overflow-x-auto min-w-0;
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed; /* fixed layout for stable columns */
+  table-layout: fixed;
+  /* fixed layout for stable columns */
 }
 
 .thead {
-    @apply border-2 border-black text-white;
+  @apply border-2 border-black text-white;
 }
 
 
 .th {
-  @apply px-3 py-2  font-medium text-white text-xs whitespace-nowrap;
+  @apply px-3 py-2 font-medium text-white text-xs whitespace-nowrap;
 }
 
 
@@ -54,7 +55,8 @@
 /* Shrink header font size on smaller screens */
 @media (max-width: 640px) {
   .th {
-    font-size: 0.75rem; /* reduce font size */
+    font-size: 0.75rem;
+    /* reduce font size */
   }
 }
 
@@ -66,7 +68,7 @@
 }
 
 .trOdd {
- @apply border-2 border-black text-white;
+  @apply border-2 border-black text-white;
 }
 
 .trEven {

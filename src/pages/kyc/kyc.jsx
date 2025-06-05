@@ -212,7 +212,7 @@ const Kyc = () => {
               placeholder="Enter UPI number"
               className={inputStyle}
             />
-             {errors.applicantName && <p className={errorStyle}>{errors.upi}</p>}
+            {errors.applicantName && <p className={errorStyle}>{errors.upi}</p>}
           </div>
 
           <div>

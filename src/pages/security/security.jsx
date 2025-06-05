@@ -2,7 +2,7 @@ import React from 'react';
 
 const Security = () => {
   return (
-   <div className="w-full min-h-screen px-4 sm:px-6 lg:px-8 sm:max-w-xl md:max-w-3xl lg:max-w-5xl text-white leading-relaxed break-words transition-all duration-300">
+    <div className="w-full min-h-screen px-4 sm:px-6 lg:px-8 sm:max-w-xl md:max-w-3xl lg:max-w-5xl text-white leading-relaxed break-words transition-all duration-300">
 
       <h1 className="text-3xl font-bold mb-8 text-center">Legal Details</h1>
 
@@ -14,7 +14,7 @@ const Security = () => {
 
         <ol className="list-decimal pl-6 space-y-4">
           <li>
-            <strong>Account Security:</strong> You are responsible for maintaining the security of your account credentials. While we provide tools such as two-factor authentication to enhance security, you are ultimately responsible for safeguarding your account. You are liable for all activities conducted under your account, including but not limited to deposits, withdrawals, and trading activities. JAIMAX shall not be liable for any loss or damage arising from your failure to maintain the security of your account or password. Promptly notify JAIMAX of any unauthorized access or use of your account.
+            <strong className='text-black'>Account Security:</strong> You are responsible for maintaining the security of your account credentials. While we provide tools such as two-factor authentication to enhance security, you are ultimately responsible for safeguarding your account. You are liable for all activities conducted under your account, including but not limited to deposits, withdrawals, and trading activities. JAIMAX shall not be liable for any loss or damage arising from your failure to maintain the security of your account or password. Promptly notify JAIMAX of any unauthorized access or use of your account.
           </li>
           <li>
             <strong>Suspicious Activity:</strong> JAIMAX reserves the right to suspend or restrict your account in the event of suspicious activity.

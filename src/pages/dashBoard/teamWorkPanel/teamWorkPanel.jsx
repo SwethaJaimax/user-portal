@@ -121,7 +121,7 @@ const TeamCollaboration = () => {
         }
       `}</style>
       <div
-       className="min-h-screen bg-white p-6 rounded-xl shadow-md md:col-span-2 mx-auto w-full max-w-7xl"
+        className="min-h-screen bg-white p-6 rounded-xl shadow-md md:col-span-2 mx-auto w-full max-w-7xl"
         style={{
           background: "linear-gradient(111deg, #096d6f, #40c9c6)",
         }}

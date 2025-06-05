@@ -1,18 +1,3 @@
-// "S.No",
-//                   "Transaction ID",
-//                   "Payment Mode ",
-//                   "Jaimax Coin",
-//                   "INR Price",
-//                   "USD price",
-//                   "Round",
-//                   "Currency",
-//                   "Amount",
-//                   "Purchase Date",
-//                   "Status",
-
-
-
-
 
 import React, { useState, useEffect } from "react";
 import styles from "./buyTransactionDetails.module.css";
@@ -20,7 +5,7 @@ import { Search } from "lucide-react";
 
 const ITEMS_PER_PAGE = 10;
 
-const TransactionDetails = ({data }) => {
+const TransactionDetails = ({ data }) => {
   const [query, setQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
