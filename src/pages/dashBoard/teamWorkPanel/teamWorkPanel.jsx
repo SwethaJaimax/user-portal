@@ -121,53 +121,63 @@ const TeamCollaboration = () => {
         }
       `}</style>
       <div
-        className="min-h-screen bg-white p-6 rounded-xl shadow-md md:col-span-2 mx-auto w-full max-w-7xl"
-        style={{
-          background: "linear-gradient(111deg, #096d6f, #40c9c6)",
-        }}
+        className="min-h-screen bg-white p-6 rounded-xl shadow-md md:col-span-2 mx-auto w-full max-w-7xl "
+//         style={{
+//           background: `linear-gradient(
+//   to top right,
+//   #1e7f3f 0%,
+//   #3aa98c 40%,
+//   #89c954 100%
+// )`,
+//         }}
       >
-        <div className="flex justify-between items-center mb-6 flex-wrap gap-2">
-          <div className="font-semibold text-xl text-white">Team Members</div>
-          <button className="px-4 py-2 text-sm border border-white text-white rounded-full  whitespace-nowrap">
+        <div className="flex justify-between items-center mb-6 flex-wrap gap-2 ">
+          <div className="font-semibold text-xl text-[#084e54] ">
+            Team Members
+          </div>
+          <button className="px-4 py-2 text-sm text-[#fff] rounded-full  whitespace-nowrap bg-[#26a69a]">
             + Add Member
           </button>
         </div>
-        <ul className="space-y-6 max-h-[38rem] overflow-y-auto hide-scrollbar">
+        <div className="relative max-h-[40rem] overflow-y-auto hide-scrollbar">
+          {/* Sticky soft top line */}
+          <div className="sticky top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#fff]/30 via-[#f2f2f2]/80 to-[#fff]/30 z-10" />
 
-
-
-          {members.map((member, idx) => (
-            <li
-              key={idx}
-              className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0"
-            >
-              <div className="flex items-center space-x-4">
-                <div
-                  className={`w-12 h-12 rounded-full ${member.bg} flex items-center justify-center`}
-                >
-                  <img
-                    src={member.avatar}
-                    alt={member.name}
-                    className="w-10 h-10 rounded-full"
-                  />
-                </div>
-                <div>
-                  <div className="text-base font-medium text-white">
-                    {member.name}
-                  </div>
-                  <div className="text-sm text-white">
-                    Working on <span className="text-white">{member.task}</span>
-                  </div>
-                </div>
-              </div>
-              <span
-                className={`text-sm px-4 py-1.5 rounded-full ${member.badge} whitespace-nowrap`}
+          <ul className="space-y-5 relative z-0 pt-2">
+            {members.map((member, idx) => (
+              <li
+                key={idx}
+                className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0"
               >
-                {member.status}
-              </span>
-            </li>
-          ))}
-        </ul>
+                <div className="flex items-center space-x-4">
+                  <div
+                    className={`w-12 h-12 rounded-full ${member.bg} flex items-center justify-center`}
+                  >
+                    <img
+                      src={member.avatar}
+                      alt={member.name}
+                      className="w-10 h-10 rounded-full"
+                    />
+                  </div>
+                  <div>
+                    <div className="text-base font-medium text-[#084e54]">
+                      {member.name}
+                    </div>
+                    <div className="text-sm text-[#084e54]">
+                      Working on{" "}
+                      <span className="text-[#084e54]">{member.task}</span>
+                    </div>
+                  </div>
+                </div>
+                <span
+                  className={`text-sm px-4 py-1.5 rounded-full ${member.badge} whitespace-nowrap`}
+                >
+                  {member.status}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   );

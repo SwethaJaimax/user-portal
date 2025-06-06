@@ -169,18 +169,18 @@ const WithDrawal = () => {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#084e54] text-white flex flex-col">
-      <div className="bg-[#084e54] text-white px-4 sm:px-8 py-8 flex-grow">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div className="min-h-screen w-full text-white flex flex-col ">
+      <div className=" text-white px-4 sm:px-8 py-8 flex-grow bg-[#fff] rounded-md" style={{boxShadow:"0px 0px 4px silver", marginBottom:"15px"}}>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 ">
           {/* Left Side */}
           <div className="space-y-6 min-w-0">
             {/* Balance Type Dropdown */}
             <div>
-              <label className="block mb-2 text-sm">Balance Type</label>
-              <select className="w-full bg-transparent border border-gray-500 rounded px-4 py-2 focus:outline-none">
-                <option>Available Balance</option>
+              <label className="block mb-2 text-md text-[#26a69a]">Balance Type</label>
+              <select className="w-full text-[gray] border border-[gray]/40 rounded px-4 py-2 focus:outline-none">
+                <option className="text-[gray]">Available Balance</option>
               </select>
-              <p className="mt-2 text-sm text-gray-400 break-words">
+              <p className="mt-2 text-sm text-[#000] break-words ">
                 Total Available Balance : 0.00
               </p>
             </div>
@@ -188,19 +188,19 @@ const WithDrawal = () => {
             {/* Currency and Amount Inputs */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block mb-2 text-sm">Payment Currency</label>
-                <button className="w-full bg-[#4ecdc4] text-black font-medium py-2 rounded">
+                <label className="block mb-2 text-md text-[#26a69a]">Payment Currency</label>
+                <button className="w-[90%] bg-[#c5d82e] text-black font-medium py-2 rounded text-md">
                   INR
                 </button>
               </div>
               <div>
-                <label className="block mb-2 text-sm">Amount</label>
+                <label className="block mb-2 text-md text-[#000]  ">Amount</label>
                 <input
                   type="number"
                   placeholder="Enter Amount ₹"
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
-                  className={`w-full bg-transparent border rounded px-4 py-2 focus:outline-none text-white ${errors.amount ? "border-red-500" : "border-gray-500"
+                  className={`w-full bg-transparent border rounded px-4 py-2 focus:outline-none text-[#000] text-[14px] placeholder-[gray]/40 focus:outline-none focus:ring-2 focus:ring-[#4ecdc4] transition ${errors.amount ? "border-white-500" : "border-white-500"
                     }`}
                 />
                 {errors.amount && (
@@ -211,7 +211,7 @@ const WithDrawal = () => {
 
 
             {/* Fee Summary */}
-            <div className="text-sm text-gray-300 space-y-2">
+            <div className="text-sm text-[#000] space-y-2">
               <div className="flex justify-between py-2 border-b border-gray-600">
                 <span>Fees</span>
                 <span>0</span>
@@ -225,15 +225,15 @@ const WithDrawal = () => {
             <button
               type="button"
               onClick={handleConfirm}
-              className="w-full bg-gradient-to-r from-[#094e54] to-[#4ecdc4] text-white font-semibold px-6 py-3 rounded-full hover:from-[#0a5c64] hover:to-[#5dd5cd] transition"
+              className="w-full bg-[#26a69a] hover:bg-[#1e857b] text-white font-semibold px-6 py-3 rounded-full hover:from-[#0a5c64] hover:to-[#5dd5cd] transition"
             >
               Confirm Password
             </button>
           </div>
 
           {/* Center - Bank Details */}
-          <div className="border border-gray-600 rounded p-6 min-w-0">
-            <h2 className="text-lg font-bold mb-6">Bank Details</h2>
+          <div className="border-r border-l border-[#000]/600 pl-6 min-w-0 text-[#000]">
+            <h2 className="text-lg font-bold mb-6 text-[#26a69a]">Bank Details</h2>
             <p className="mb-3 truncate">Bank Holder Name</p>
             <p className="mb-3 truncate">Bank Account Number</p>
             <p className="mb-3 truncate">Bank IFSC Code</p>
@@ -241,9 +241,9 @@ const WithDrawal = () => {
           </div>
 
           {/* Right - Terms & Conditions */}
-          <div className="min-w-0">
-            <h2 className="text-lg font-bold mb-6">Terms & Conditions</h2>
-            <ul className="list-decimal space-y-3 pl-5 text-sm text-gray-300">
+          <div className="min-w-0 text-[#000]">
+            <h2 className="text-lg font-bold mb-6 text-[#26a69a] ">Terms & Conditions</h2>
+            <ul className="list-decimal space-y-3 pl-5 text-sm text-justify">
               <li>
                 You have to complete the KYC and get approved status; then you can start the withdrawal process.
               </li>
@@ -262,7 +262,7 @@ const WithDrawal = () => {
       </div>
 
       {/* Responsive Transaction Table */}
-      <div className="flex-grow flex flex-col px-4 sm:px-8 pb-8">
+      <div className="flex-grow flex flex-col  pb-8 border">
         <div className="overflow-x-auto">
           <TransactionDetails list={sampleData} />
         </div>

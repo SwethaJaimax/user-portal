@@ -33,8 +33,8 @@ const MyTotalTeam = () => {
   // Darker shapes base styles
   const shapeBaseStyles = {
     position: 'absolute',
-    backgroundColor: '#111111', // dark color for shapes
-    opacity: 0.3,               // slightly more visible
+    backgroundColor: 'white', // dark color for shapes
+    opacity: 0.1,               // slightly more visible
     pointerEvents: 'none',
     transition: 'opacity 0.3s ease, transform 3s ease-in-out',
     zIndex: 0,
@@ -44,49 +44,54 @@ const MyTotalTeam = () => {
   };
 
   const shapeStyles = {
-    circle: {
-      width: '6rem',
-      height: '6rem',
-      borderRadius: '50%',
-      animationName: 'floatUpDown',
-      animationDuration: '6s',
-    },
-    triangle: {
-      width: 0,
-      height: 0,
-      borderLeft: '3rem solid transparent',
-      borderRight: '3rem solid transparent',
-      borderBottom: '5rem solid #111111',  // dark triangle color
-      animationName: 'floatLeftRight',
-      animationDuration: '5s',
-    },
-    square: {
-      width: '6rem',
-      height: '6rem',
-      animationName: 'floatUpDown',
-      animationDuration: '7s',
-    },
-    pentagon: {
-      width: '6rem',
-      height: '6rem',
-      clipPath: 'polygon(50% 0%, 95% 35%, 77% 90%, 23% 90%, 5% 35%)',
-      animationName: 'floatLeftRight',
-      animationDuration: '6.5s',
-    },
-    diamond: {
-      width: '5rem',
-      height: '5rem',
-      transform: 'rotate(45deg)',
-      animationName: 'floatUpDown',
-      animationDuration: '5.5s',
-    },
-    ellipse: {
-      width: '7rem',
-      height: '4rem',
-      borderRadius: '50% / 100%',
-      animationName: 'floatLeftRight',
-      animationDuration: '6s',
-    },
+ circle: {
+    width: '6rem',
+    height: '6rem',
+    borderRadius: '50%',
+    backgroundColor: '#084e54',
+    animationName: 'floatUpDown',
+    animationDuration: '6s',
+  },
+  triangle: {
+    width: 0,
+    height: 0,
+    borderLeft: '3rem solid transparent',
+    borderRight: '3rem solid transparent',
+    borderBottom: '5rem solid #084e54',
+    animationName: 'floatLeftRight',
+    animationDuration: '5s',
+  },
+  square: {
+    width: '6rem',
+    height: '6rem',
+    backgroundColor: '#084e54',
+    animationName: 'floatUpDown',
+    animationDuration: '7s',
+  },
+  pentagon: {
+    width: '6rem',
+    height: '6rem',
+    backgroundColor: '#084e54', 
+    clipPath: 'polygon(50% 0%, 95% 35%, 77% 90%, 23% 90%, 5% 35%)',
+    animationName: 'floatLeftRight',
+    animationDuration: '6.5s',
+  },
+  diamond: {
+    width: '5rem',
+    height: '5rem',
+    backgroundColor: '#084e54', 
+    transform: 'rotate(45deg)',
+    animationName: 'floatUpDown',
+    animationDuration: '5.5s',
+  },
+  ellipse: {
+    width: '7rem',
+    height: '4rem',
+    backgroundColor: '#084e54', 
+    borderRadius: '50% / 100%',
+    animationName: 'floatLeftRight',
+    animationDuration: '6s',
+  },
   };
 
   const shapePositions = [
@@ -109,13 +114,13 @@ const MyTotalTeam = () => {
         `}
       </style>
 
-      <div className="w-full min-h-screen bg-[#084e54] space-y-6 px-4 py-6">
+      <div className="w-full min-h-screen space-y-6 px-4 py-6">
         {/* Info boxes grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {infoBoxes.map((box, idx) => (
             <div
               key={idx}
-              className="group cursor-pointer relative p-6 rounded-xl shadow-lg text-[#084e54] overflow-hidden flex items-center justify-between bg-white transition duration-300 ease-in-out
+              className="group cursor-pointer relative p-6 rounded-xl shadow-lg text-[#084e54] overflow-hidden flex items-center justify-between bg-[#fff] transition duration-300 ease-in-out
                 hover:bg-white hover:shadow-2xl hover:scale-[1.03]"
             >
               {/* Background floating shapes */}

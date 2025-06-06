@@ -19,14 +19,13 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="h-screen bg-gray-50 flex">
+    <div className="h-[98vh] bg-gray-50 flex bg-white">
       <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
       <main
-        className="flex-1 bg-[#084e54] flex flex-col p-2"
-        
+        className="flex-1 flex flex-col m-3 bg-white "
       >
         <Header />
-        <div className="flex-1 overflow-auto hide-scrollbar">
+        <div className="flex-1 overflow-x-auto scrollbar-hide p-5 bg-[#f2f2f2] mt-3 rounded-xl pb-5" >
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/wallet" element={<Wallet />} />

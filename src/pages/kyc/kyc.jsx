@@ -52,11 +52,11 @@ const Kyc = () => {
   };
 
   const inputStyle =
-    'w-full px-4 py-2.5 rounded-md border border-white/20 bg-white/10 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-[#4ecdc4] text-sm transition';
+    'w-full px-4 py-2.5 rounded-md border border-[gray]/40 bg-white text-black placeholder-[gray]/40 focus:outline-none focus:ring-2 focus:ring-[#4ecdc4] text-sm transition';
 
   const sectionStyle = 'space-y-5 p-5 rounded-xl';
 
-  const labelStyle = 'block text-sm font-medium text-white mb-1.5';
+  const labelStyle = 'block text-sm font-medium mb-1.5 text-[#26a69a]';
 
   const errorStyle = 'text-red-400 text-xs mt-1';
 
@@ -64,27 +64,27 @@ const Kyc = () => {
     'flex items-center h-10 rounded-md border border-white/20 overflow-hidden';
 
   return (
-    <div className="bg-[#084e54] text-white px-4 sm:px-6 lg:px-8 py-4 min-h-screen">
+    <div className="text-white px-4 sm:px-6 lg:px-8 py-4 min-h-screen bg-[white] rounded-lg">
       <form
         onSubmit={handleSubmit}
         className="w-full rounded-xl grid grid-cols-1 md:grid-cols-3 gap-7"
       >
         {/* Header */}
         <div className="col-span-1 md:col-span-3 mb-7">
-          <h2 className="text-2xl font-semibold mb-1">
+          <h2 className="text-2xl font-semibold mb-1 text-[#084e54]">
             KYC Information{' '}
-            <span className="text-base font-normal text-white/80">
+            <span className="text-base font-normal text-[#000]">
               (Fill up information and verify your KYC)
             </span>
           </h2>
-          <p className="text-sm mt-1">
-            KYC status: <span className="text-red-400 font-semibold">n/a</span>
+          <p className="text-sm mt-1 text-[#000]">
+            KYC status: <span className="text-[#c5d82e] font-semibold">n/a</span>
           </p>
         </div>
 
         {/* Applicant Info */}
         <div className={sectionStyle}>
-          <h3 className="font-semibold text-lg border-b border-white/30 pb-3 mb-4">Applicant Info</h3>
+          <h3 className="font-semibold text-lg border-b border-[gray]/30 pb-3 mb-4 text-[#000]">Applicant Info</h3>
 
           <div>
             <label className={labelStyle} htmlFor="applicantName">
@@ -112,6 +112,7 @@ const Kyc = () => {
               value={formData.dob}
               onChange={handleInputChange}
               className={inputStyle}
+              style={{color:"#6b728066"}}
             />
             {errors.dob && <p className={errorStyle}>{errors.dob}</p>}
           </div>
@@ -149,7 +150,7 @@ const Kyc = () => {
 
         {/* Applicant Proofs */}
         <div className={sectionStyle}>
-          <h3 className="font-semibold text-lg border-b border-white/30 pb-3 mb-4">Applicant Proofs</h3>
+          <h3 className="font-semibold text-lg border-b border-[gray]/30 pb-3 mb-4 text-[#000]">Applicant Proofs</h3>
           {[
             ['aadharFront', 'Aadhar Front'],
             ['aadharBack', 'Aadhar Back'],
@@ -162,7 +163,7 @@ const Kyc = () => {
               <div className={fileInputWrapper}>
                 <label
                   htmlFor={field}
-                  className="bg-white/10 hover:bg-white/20 text-white px-5 h-full flex items-center text-sm font-semibold cursor-pointer select-none min-w-[120px] justify-center"
+                  className="bg-white border border-[gray]/40 placeholder-[gray]/40 text-[gray]/40 px-5 h-full flex items-center text-sm font-semibold cursor-pointer select-none min-w-[120px] justify-center"
                 >
                   Choose file
                 </label>
@@ -173,7 +174,7 @@ const Kyc = () => {
                   onChange={handleInputChange}
                   className="hidden"
                 />
-                <div className="bg-[#063c41] text-sm text-white px-3 h-full flex items-center w-full truncate select-text">
+                <div className="bg-[#26a69a] text-sm text-white px-3 h-full flex items-center w-full truncate select-text">
                   {formData[field]?.name || 'No file chosen'}
                 </div>
               </div>
@@ -199,7 +200,7 @@ const Kyc = () => {
 
         {/* Bank Details */}
         <div className={sectionStyle}>
-          <h3 className="font-semibold text-lg border-b border-white/30 pb-3 mb-4">Bank Details</h3>
+          <h3 className="font-semibold text-lg border-b border-[gray]/30 pb-3 mb-4 text-[#000]">Bank Details</h3>
           <div>
             <label className={labelStyle} htmlFor="upi">
               UPI Number
@@ -263,7 +264,7 @@ const Kyc = () => {
           <div className="flex justify-end pt-5">
             <button
               type="submit"
-              className="bg-gradient-to-r from-[#094e54] to-[#4ecdc4] text-white font-semibold text-sm px-14 py-3 rounded-full transition duration-300 hover:scale-105"
+              className="bg-[#26a69a] text-white font-semibold text-sm px-14 py-3 rounded-full transition duration-300 hover:scale-105 hover:bg-[#1e857b]"
             >
               Submit
             </button>

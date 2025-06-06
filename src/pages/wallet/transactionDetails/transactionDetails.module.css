@@ -26,11 +26,17 @@
 }
 
 .tableWrapper {
-  @apply hideScrollbar rounded-lg shadow flex-grow overflow-x-auto min-w-0;
+  @apply rounded-lg shadow flex-grow overflow-x-auto min-w-0;
+  scrollbar-width: none;           /* Firefox */
+  -ms-overflow-style: none;        /* IE/Edge */
+}
+
+.tableWrapper::-webkit-scrollbar {
+  display: none;                   /* Chrome/Safari */
 }
 
 .table {
-  width: 100%;
+  width: 90%;
   border-collapse: collapse;
   table-layout: fixed;
   /* fixed layout for stable columns */

@@ -54,66 +54,75 @@ function Sidebar() {
     }
   };
 
-
   if (isMobile && !isOpen) {
     return (
       <div className="fixed top-4 left-4 z-50">
-        <Hamburger toggled={isOpen} toggle={setIsOpen} size={22} color="#16A34A" />
+        <Hamburger
+          toggled={isOpen}
+          toggle={setIsOpen}
+          size={22}
+          color="#16A34A"
+        />
       </div>
     );
   }
 
-
   return (
     <>
-
       {isMobile && isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 "
           onClick={() => setIsOpen(false)}
         />
       )}
 
       <aside
         className={`
-    fixed top-0 left-0 h-screen  bg-[#084e54]  border-r border-gray-200 flex flex-col z-40
-    transition-all duration-300 ease-in-out
+    fixed top-0 left-0 bg-[#f7f7f7] flex flex-col z-40
+    transition-all duration-300 ease-in-out 
     ${isOpen ? "w-86" : "w-20"}
-    md:relative md:translate-x-0 md:w-auto 
+    md:relative md:translate-x-0 md:w-auto mt-3 ml-3
   `}
-        style={{ minWidth: isOpen ? "19rem" : "5rem" }}
+        style={{
+          minWidth: isOpen ? "19rem" : "5rem",
+          // border:"1px solid black",
+          borderRadius: "10px",
+          maxHeight:"95vh"
+        }}
       >
-
-
         <div
-          className={`flex items-center justify-between p-3  border-gray-200 ${isOpen ? "" : "flex-start"
-            }`}
+          className={`flex items-center justify-between p-3 rounded-0 md:rounded-md  border-gray-200 ${
+            isOpen ? "" : "flex-start"
+          }`}
         >
           <div
-            className={`flex items-center gap-1 ${isOpen ? "" : "justify-center w-full"
-              }`}
+            className={`flex items-center gap-1 ${
+              isOpen ? "" : "justify-center w-full"
+            }`}
           >
             {isOpen && (
-              <h1 className="text-2xl font-bold text-white select-none">JAIMAX</h1>
+              <h1 className="text-3xl font-bold text-[#20934a] select-none">
+                JAIMAX
+              </h1>
             )}
           </div>
 
-          <div className="p-4 bg-[#084e54] text-white">
+          <div className="p-4 text-white">
             <Hamburger
               toggled={isOpen}
               toggle={setIsOpen}
-              size={28}
-              color="white"
+              size={24}
+              color="black"
               label="Toggle sidebar"
             />
           </div>
         </div>
 
-
         <nav className="flex-1 overflow-y-auto hide-scrollbar space-y-1 p-2">
           <p
-            className={`text-xs text-white uppercase font-semibold px-3 mb-4 select-none ${isOpen ? "" : "hidden"
-              }`}
+            className={`text-xs text-black uppercase font-semibold px-3 mb-4 select-none ${
+              isOpen ? "" : "hidden"
+            }`}
           >
             Menu
           </p>
@@ -123,14 +132,29 @@ function Sidebar() {
               key={item.name}
               to={item.path}
               onClick={handleNavClick}
-              className={`flex items-center gap-5 px-4 py-2 rounded-lg font-semibold transition-colors `}
+              className={`relative flex items-center px-4 py-2 font-semibold transition-colors
+      ${isOpen ? "justify-start gap-5" : "justify-center"}
+      ${location.pathname === item.path ? "text-black" : "text-gray-500"}`}
               title={!isOpen ? item.name : undefined}
             >
-              <span className={`text-2xl px-4 py-1 rounded-lg   ${location.pathname === item.path
-                ? "bg-green-50 text-white-700 px-4 py-3 rounded-lg  border-l-4 border-green-600 pl-3"
-                : "text-white "
-                } `}>{item.icon}</span>
-              <span className={`text-white ${isOpen ? "block" : "hidden"} text-base`}>{item.name}</span>
+              {/* Rounded left indicator */}
+              {location.pathname === item.path && (
+                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-1.5 bg-[#20934a] rounded-r-full"></span>
+              )}
+
+              <span
+                className={`text-2xl ${
+                  location.pathname === item.path
+                    ? "text-[#20934a]"
+                    : "text-gray-400"
+                }`}
+              >
+                {item.icon}
+              </span>
+
+              <span className={`${isOpen ? "block" : "hidden"} text-base`}>
+                {item.name}
+              </span>
             </Link>
           ))}
         </nav>

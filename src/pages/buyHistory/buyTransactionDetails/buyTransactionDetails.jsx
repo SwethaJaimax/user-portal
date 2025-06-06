@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import styles from "./buyTransactionDetails.module.css";
 import { Search } from "lucide-react";
@@ -51,21 +50,32 @@ const TransactionDetails = ({ data }) => {
   ];
 
   return (
-    <div className={styles.container} style={{ width: "100%", fontSize: "0.85rem" }}>
+    <div
+      className={styles.container}
+      style={{
+        width: "100%",
+        fontSize: "0.85rem",
+        background:
+          "radial-gradient(circle at 50% 30%, #20934a 0%,rgb(65, 187, 174) 70%)",
+      }}
+    >
       {/* Header */}
       <div className={styles.header} style={{ marginBottom: "12px" }}>
-        <h2 className={styles.title} style={{ fontSize: "1.1rem" }}>
+        <h2
+          className={styles.title}
+          style={{ fontSize: "1.1rem", color: "#084e54" }}
+        >
           Team Transactions
         </h2>
 
-        <div className="flex items-center rounded-xl border border-gray-600 px-3 py-1.5 w-72">
+        <div className="flex items-center rounded-xl border border-white px-3 py-1.5 w-72 focus-within:border-2 focus-within:border-[#f2f2f2] transition-all duration-200">
           <input
             type="text"
             placeholder="Search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="bg-transparent text-white placeholder-gray-400 focus:outline-none flex-grow"
-            style={{ fontSize: "0.85rem", padding: "4px 8px" }}
+            className="bg-transparent text-white placeholder-white focus:outline-none flex-grow"
+            style={{ fontSize: "0.85rem", padding: "4px 8px", color: "white" }}
           />
           <Search className="text-white" size={16} />
         </div>
@@ -105,7 +115,9 @@ const TransactionDetails = ({ data }) => {
                   {headings.map((heading, i) => (
                     <th
                       key={i}
-                      className={`${styles.th} ${i === 0 ? styles.thFirst : ""}`}
+                      className={`${styles.th} ${
+                        i === 0 ? styles.thFirst : ""
+                      }`}
                       title={heading}
                       style={{
                         backgroundColor: "#f3f4f6",
@@ -199,7 +211,10 @@ const TransactionDetails = ({ data }) => {
           </div>
         </>
       ) : (
-        <div className={styles.noData} style={{ fontSize: "0.9rem", padding: "16px" }}>
+        <div
+          className={styles.noData}
+          style={{ fontSize: "0.9rem", padding: "16px" }}
+        >
           No data found
         </div>
       )}
