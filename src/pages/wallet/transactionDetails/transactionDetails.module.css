@@ -95,3 +95,33 @@
 .noData {
   @apply text-center text-white text-base py-10 flex-grow;
 }
+.container {
+  width: 98%;
+  padding: 1rem;
+}
+
+/* Make the cards stack on small screens */
+.topCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.walletCard, .referralCard {
+  flex: 1 1 300px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Make only the table scrollable */
+.tableWrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tableWrapper::-webkit-scrollbar {
+  display: none;
+}

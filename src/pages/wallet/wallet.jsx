@@ -11,8 +11,6 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-// Optional: Replace with actual images from assets folder
-// const { Facebook, Twitter, WhatsApp, Telegram } = assets;
 const shareIcons = [
   { icon: <FaFacebook />, label: "Facebook" },
   { icon: <FaTwitter />, label: "Twitter" },
@@ -104,10 +102,11 @@ const Wallet = () => {
         `}
       </style>
 
-      <div className="w-full min-h-screen">
+      <div className="w-full border border-black">
+        {/* Cards Section */}
         <div className="px-4 py-6 space-y-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Wallet Box */}
+            {/* Wallet Balance Card */}
             <div className="relative group p-6 rounded-xl shadow-lg bg-white overflow-hidden transition duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] col-span-1 lg:col-span-2 flex flex-col justify-between">
               {["circle", "diamond"].map((shape, i) => (
                 <div
@@ -147,7 +146,7 @@ const Wallet = () => {
               </div>
             </div>
 
-            {/* Referral Box */}
+            {/* Referral Card */}
             <div className="relative group bg-white p-6 rounded-xl shadow-lg text-[#084e54] overflow-hidden transition duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] flex flex-col justify-center items-center ">
               {["circle", "diamond"].map((shape, i) => (
                 <div
@@ -161,7 +160,6 @@ const Wallet = () => {
                 />
               ))}
               <div className="z-10 text-center w-full">
-                {/* <h2 className="font-bold mb-3 text-lg">Your Referral Code</h2> */}
                 <TextField
                   fullWidth
                   label="Referral Code"
@@ -197,9 +195,11 @@ const Wallet = () => {
           </div>
         </div>
 
-        {/* Transaction Section */}
-        <div className="w-full px-2 overflow-x-auto">
-          <TransactionDetails list={transactionData} />
+        {/* ✅ Scrollable Table Only */}
+        <div className="px-4 pb-10">
+          <div className="max-sm:max-w-[330px] max-sm:overflow-x-auto">
+            <TransactionDetails list={transactionData} />
+          </div>
         </div>
       </div>
 
@@ -211,7 +211,6 @@ const Wallet = () => {
             onClick={() => setShowShare(false)}
           />
           <div className="fixed top-[25%] left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-md bg-white rounded-lg shadow-xl overflow-hidden">
-            {/* Modal Header */}
             <div className="bg-[#26a69a] text-white px-4 py-2 text-lg font-semibold flex justify-center items-center relative">
               <span>Share Your Referral Code</span>
               <span
@@ -222,7 +221,6 @@ const Wallet = () => {
               </span>
             </div>
 
-            {/* Social Icons */}
             <div className="flex justify-center gap-6 py-6 text-black text-[1.7rem]">
               {shareIcons.map(({ icon, label }, idx) => (
                 <div
