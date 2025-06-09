@@ -1,9 +1,9 @@
 /* TransactionDetails.module.css */
 
 .container {
-  @apply flex flex-col bg-gradient-to-br from-[#096d6f] to-[#40c9c6] p-4 rounded-xl shadow-md mx-auto w-full max-w-full h-full flex-grow min-h-0;
+  @apply flex flex-col bg-gradient-to-br from-[#096d6f] to-[#40c9c6] p-4 rounded-xl shadow-md max-sm:max-w-[350px] max-sm:overflow-x-auto h-full flex-grow min-h-0;
 }
-
+/*className='max-sm:max-w-[350px] max-sm:overflow-x-auto table-responsive max-h-screen'*/
 .header {
   @apply flex justify-between items-center mb-4 flex-wrap gap-3;
 }

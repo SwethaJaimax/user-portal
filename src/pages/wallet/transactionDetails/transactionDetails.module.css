@@ -36,9 +36,10 @@
 }
 
 .table {
-  width: 90%;
-  border-collapse: collapse;
-  table-layout: fixed;
+  @apply w-full table-auto border-collapse text-sm;
+  /* width: 90%; */
+  /* border-collapse: collapse;
+  table-layout: fixed; */
   /* fixed layout for stable columns */
 }
 

@@ -216,7 +216,7 @@ function BuyHistory() {
   ];
 
   return (
-    <div>
+    <div >
       <BuyTransactionDetails data={buyHistoryDetails} />
     </div>
   )

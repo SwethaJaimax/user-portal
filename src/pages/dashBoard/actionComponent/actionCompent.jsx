@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState} from "react";
 import { FaDownload, FaShareAlt } from "react-icons/fa";
 import {
   FaFacebook,
@@ -30,6 +30,26 @@ const ActionButtons = () => {
 
   return (
     <>
+      {/* Animation Keyframes */}
+      <style>
+        {`
+          @keyframes fadeSlideIn {
+            0% {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          .animate-fadeSlideIn {
+            animation: fadeSlideIn 0.6s ease-out forwards;
+          }
+        `}
+      </style>
+
       {/* Referral Copied Toast */}
       {copied && (
         <div className="fixed top-20 left-1/2 transform -translate-x-1/2 bg-white text-[#20934a] px-6 py-4 rounded-lg shadow-lg z-50 font-semibold text-sm text-[18px]">
@@ -69,8 +89,7 @@ const ActionButtons = () => {
                   }}
                   title={label}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor =
-                      "#26a69a"
+                    e.currentTarget.style.backgroundColor = "#26a69a";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = "transparent";
@@ -85,8 +104,8 @@ const ActionButtons = () => {
       )}
 
       {/* Main Card */}
-      <div className="rounded-lg shadow-md z-10 p-3 bg-white w-full relative">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+      <div className="rounded-lg shadow-md z-10 p-4 bg-white w-full max-w-[1040px] mx-auto animate-fadeSlideIn">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 w-full">
           {/* Left */}
           <div className="flex gap-4 items-center">
             <img
@@ -103,7 +122,7 @@ const ActionButtons = () => {
           </div>
 
           {/* Right */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center sm:items-center gap-3 w-full sm:w-auto lg:justify-end text-center sm:text-left">
             <TextField
               label="Referral Code"
               value="JMXA4557jXXN"
@@ -121,6 +140,7 @@ const ActionButtons = () => {
               variant="outlined"
               size="small"
               sx={{
+                width: { xs: "100%", sm: "auto" },
                 input: { color: "#20934a" },
                 label: {
                   color: "#084e54",
@@ -143,7 +163,7 @@ const ActionButtons = () => {
             />
 
             <button
-              className="bg-[#26a69a] text-white flex items-center px-4 py-2 rounded-full text-sm font-medium shadow hover:bg-[#1d8e85]"
+              className="bg-[#26a69a] text-white flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium shadow hover:bg-[#1d8e85] w-full sm:w-auto"
               onClick={handleCopy}
             >
               <FaDownload className="mr-2" /> Add New Member

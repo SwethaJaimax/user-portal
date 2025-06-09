@@ -102,12 +102,12 @@ const Wallet = () => {
         `}
       </style>
 
-      <div className="w-full border border-black">
+      <div className="w-full flex flex-col gap-4">
         {/* Cards Section */}
-        <div className="px-4 py-6 space-y-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="p-4">
+          <div className="flex max-lg:flex-col gap-6">
             {/* Wallet Balance Card */}
-            <div className="relative group p-6 rounded-xl shadow-lg bg-white overflow-hidden transition duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] col-span-1 lg:col-span-2 flex flex-col justify-between">
+            <div className="flex-1 relative group p-6 rounded-xl shadow-lg bg-white overflow-hidden transition duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] col-span-1 lg:col-span-2 flex flex-col justify-between">
               {["circle", "diamond"].map((shape, i) => (
                 <div
                   key={i}
@@ -119,9 +119,9 @@ const Wallet = () => {
                   className="group-hover:opacity-100 opacity-30"
                 />
               ))}
-              <div className="flex flex-col sm:flex-row justify-between items-center text-[#084e54] z-10">
-                <div className="flex items-center gap-4 mb-4 sm:mb-0">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center border-2 border-[#20934a] shadow-md">
+              <div className="flex flex-col md:flex-row justify-between items-center text-[#084e54] z-10">
+                <div className="flex items-center gap-4 sm:mb-0">
+                  <div className="w-16 h-16  rounded-full flex items-center justify-center border-2 border-[#20934a] shadow-md">
                     <img
                       src={assets.walletBal}
                       alt="Wallet Icon"
@@ -147,7 +147,7 @@ const Wallet = () => {
             </div>
 
             {/* Referral Card */}
-            <div className="relative group bg-white p-6 rounded-xl shadow-lg text-[#084e54] overflow-hidden transition duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] flex flex-col justify-center items-center ">
+            <div className="flex-1 relative group bg-white p-6 rounded-xl shadow-lg text-[#084e54] overflow-hidden transition duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] flex flex-col justify-center items-center ">
               {["circle", "diamond"].map((shape, i) => (
                 <div
                   key={i}
@@ -196,10 +196,8 @@ const Wallet = () => {
         </div>
 
         {/* ✅ Scrollable Table Only */}
-        <div className="px-4 pb-10">
-          <div className="max-sm:max-w-[330px] max-sm:overflow-x-auto">
+        <div className="px-2 pb-10 max-sm:min-w-[330px] max-sm:w-[400px] w-[100%] max-sm:overflow-x-auto">
             <TransactionDetails list={transactionData} />
-          </div>
         </div>
       </div>
 

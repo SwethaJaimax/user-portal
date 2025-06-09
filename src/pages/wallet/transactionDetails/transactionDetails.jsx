@@ -45,7 +45,6 @@ const TransactionDetails = ({ list }) => {
     <div
       className={styles.container}
       style={{
-        width: "100%",
         fontSize: "0.85rem",
         background:
           "radial-gradient(circle at 50% 30%, #20934a 0%,rgb(65, 187, 174) 70%)",

@@ -100,70 +100,74 @@ const MyTotalTeam = () => {
   ];
 
   return (
-    <>
-      <style>
-        {`
-          @keyframes floatUpDown {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(10px); }
-          }
-          @keyframes floatLeftRight {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(10px); }
-          }
-        `}
-      </style>
+  <>
+  <style>
+    {`
+      /* 2-column layout below 1330px */
+      @media (max-width: 1330px) {
+        .custom-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+      }
 
-      <div className="w-full min-h-screen space-y-6 px-4 py-6">
-        {/* Info boxes grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {infoBoxes.map((box, idx) => (
+      /* 1-column layout below 960px */
+      @media (max-width: 960px) {
+        .custom-grid {
+          grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+        }
+      }
+    `}
+  </style>
+
+  <div className="w-full min-h-screen space-y-6 px-4 py-6">
+    {/* Cards grid with manual control */}
+    <div className="grid custom-grid grid-cols-1 xl:grid-cols-3 gap-6">
+      {infoBoxes.map((box, idx) => (
+        <div
+          key={idx}
+          className="group cursor-pointer relative p-6 rounded-xl shadow-lg text-[#084e54] overflow-hidden flex flex-col justify-between
+            bg-white transition duration-300 ease-in-out hover:bg-white hover:shadow-2xl hover:scale-[1.03] min-w-[250px] w-full"
+        >
+          {/* Background shapes */}
+          {box.shapes.map((shape, i) => (
             <div
-              key={idx}
-              className="group cursor-pointer relative p-6 rounded-xl shadow-lg text-[#084e54] overflow-hidden flex items-center justify-between bg-[#fff] transition duration-300 ease-in-out
-                hover:bg-white hover:shadow-2xl hover:scale-[1.03]"
-            >
-              {/* Background floating shapes */}
-              {box.shapes.map((shape, i) => (
-                <div
-                  key={i}
-                  style={{
-                    ...shapeBaseStyles,
-                    ...shapeStyles[shape],
-                    ...shapePositions[i],
-                  }}
-                  className="group-hover:opacity-100 opacity-30"
-                />
-              ))}
-
-              {/* Left side text */}
-              <div className="z-10">
-                <div className="text-lg font-semibold mb-1 group-hover:text-[#043739]">{box.title}</div>
-                <div className="text-3xl font-bold mb-1 group-hover:text-[#043739]">{box.value}</div>
-                <div className="text-sm text-[#1d4d4f] group-hover:text-[#0c2e2f]">{box.description}</div>
-              </div>
-
-              {/* Right side icon with colored background */}
-              <div
-                className={`absolute right-4 top-1/2 transform -translate-y-1/2 w-16 h-16 rounded-full flex items-center justify-center border-4 border-white transition duration-300 z-10 ${box.iconBg}`}
-              >
-                <img
-                  src={box.image}
-                  alt={box.title}
-                  className="w-14 h-14  object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300 z-10"
-                />
-              </div>
-
-            </div>
+              key={i}
+              style={{
+                ...shapeBaseStyles,
+                ...shapeStyles[shape],
+                ...shapePositions[i],
+              }}
+              className="group-hover:opacity-100 opacity-30"
+            />
           ))}
-        </div>
 
-        {/* Team collaboration panel */}
-        <div className="mt-6">
-          <TeamCollaboration />
+          {/* Text block with right padding to avoid image overlap */}
+          <div className="z-10 pr-20">
+            <div className="text-lg font-semibold mb-1 group-hover:text-[#043739]">{box.title}</div>
+            <div className="text-3xl font-bold mb-1 group-hover:text-[#043739]">{box.value}</div>
+            <div className="text-sm text-[#1d4d4f] group-hover:text-[#0c2e2f]">{box.description}</div>
+          </div>
+
+          {/* Image inside gradient background */}
+          <div
+            className={`absolute right-4 top-1/2 transform -translate-y-1/2 w-16 h-16 rounded-full flex items-center justify-center border-4 border-white z-10 ${box.iconBg}`}
+          >
+            <img
+              src={box.image}
+              alt={box.title}
+              className="w-14 h-14 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+            />
+          </div>
         </div>
-      </div>
-    </>
+      ))}
+    </div>
+
+    {/* Team collaboration panel */}
+    <div className="mt-6">
+      <TeamCollaboration />
+    </div>
+  </div>
+</>
   );
 };
 

@@ -3,20 +3,19 @@
 @tailwind utilities;
 
 
-html, body, #root {
-  height: 100%;
-  color: white;
-}
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  padding: 0.3rem;
 }
 
-.scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
+/* .scrollbar-hide {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+} */
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
-}
+/* .scrollbar-hide::-webkit-scrollbar {
+  display: none;
+} */
+/* ::-webkit-scrollbar {
+    display: none;
+} */
+

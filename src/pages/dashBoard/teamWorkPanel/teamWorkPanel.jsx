@@ -121,15 +121,15 @@ const TeamCollaboration = () => {
         }
       `}</style>
       <div
-        className="min-h-screen bg-white p-6 rounded-xl shadow-md md:col-span-2 mx-auto w-full max-w-7xl "
-//         style={{
-//           background: `linear-gradient(
-//   to top right,
-//   #1e7f3f 0%,
-//   #3aa98c 40%,
-//   #89c954 100%
-// )`,
-//         }}
+        className=" bg-white p-6 rounded-xl shadow-md md:col-span-2 mx-auto w-full max-w-7xl "
+        //         style={{
+        //           background: `linear-gradient(
+        //   to top right,
+        //   #1e7f3f 0%,
+        //   #3aa98c 40%,
+        //   #89c954 100%
+        // )`,
+        //         }}
       >
         <div className="flex justify-between items-center mb-6 flex-wrap gap-2 ">
           <div className="font-semibold text-xl text-[#084e54] ">
@@ -170,7 +170,7 @@ const TeamCollaboration = () => {
                   </div>
                 </div>
                 <span
-                  className={`text-sm px-4 py-1.5 rounded-full ${member.badge} whitespace-nowrap`}
+                  className={`text-sm px-4 py-1.5 rounded-full ${member.badge} text-center min-w-[100px] max-w-fit`}
                 >
                   {member.status}
                 </span>
