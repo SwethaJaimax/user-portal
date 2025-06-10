@@ -241,29 +241,59 @@ const SlabTabs = () => {
         </div>
 
         {/* Top Navigation Buttons (1st, 2nd...) */}
-        <div className="flex flex-wrap justify-center gap-2 mb-4">
-          {slabsData.map((slab, index) => (
-            <button
-              key={slab.id}
-              onClick={() => setActiveTab(index)}
-              className={`px-3 py-1.5 text-sm rounded-md font-medium transition-all duration-200 ${
-                activeTab === index
-                  ? "bg-emerald-500 text-white shadow-md scale-[1.03]"
-                  : "bg-white text-gray-700 hover:bg-gray-50 shadow-sm border border-gray-200"
-              }`}
-            >
-              {slab.id}
-              {slab.id === 1
-                ? "st"
-                : slab.id === 2
-                ? "nd"
-                : slab.id === 3
-                ? "rd"
-                : "th"}{" "}
-              Slab
-            </button>
-          ))}
-        </div>
+        <div className="flex items-center justify-center gap-2 mb-4">
+  {/* Left Arrow */}
+  {/* <button
+    onClick={() => scrollToTab(Math.max(activeTab - 1, 0))}
+    className="text-emerald-600 hover:text-emerald-800 text-xl px-2"
+  >
+    ◀
+  </button> */}
+
+  {/* Slab Buttons */}
+  <div className="flex flex-wrap justify-center gap-2">
+    {slabsData.map((slab, index) => (
+      <button
+        key={slab.id}
+        onClick={() => scrollToTab(index)} // this fixes your issue
+        className={`px-3 py-1.5 text-sm rounded-md font-medium transition-all duration-200 ${
+          activeTab === index
+            ? "bg-emerald-500 text-white shadow-md scale-[1.03]"
+            : "bg-white text-gray-700 hover:bg-gray-50 shadow-sm border border-gray-200"
+        }`}
+      >
+        {slab.id}
+        {slab.id === 1
+          ? "st"
+          : slab.id === 2
+          ? "nd"
+          : slab.id === 3
+          ? "rd"
+          : "th"}{" "}
+        Slab
+      </button>
+    ))}
+  </div>
+
+  {/* Right Arrow */}
+  {/* <button
+    onClick={() => scrollToTab(Math.min(activeTab + 1, slabsData.length - 1))}
+    className="text-emerald-600 hover:text-emerald-800 text-xl px-2"
+  >
+    ▶
+  </button> */}
+</div>
+
+<div className="relative">
+  {/* Left Arrow */}
+  {activeTab > 0 && (
+    <button
+      onClick={() => scrollToTab(activeTab - 1)}
+      className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2 hover:bg-gray-100"
+    >
+      ◀
+    </button>
+  )}
 
         {/* Swipeable Cards */}
         <div
@@ -283,6 +313,17 @@ const SlabTabs = () => {
             </div>
           ))}
         </div>
+
+        {/* Right Arrow */}
+  {activeTab < slabsData.length - 1 && (
+    <button
+      onClick={() => scrollToTab(activeTab + 1)}
+      className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2 hover:bg-gray-100"
+    >
+      ▶
+    </button>
+  )}
+</div>
 
         {/* Pagination Dots */}
         <div className="flex justify-center gap-2">
