@@ -170,69 +170,74 @@ const WithDrawal = () => {
 
   return (
     <div className="min-h-screen w-full text-white flex flex-col ">
-      <div className=" text-white px-4 sm:px-8 py-8 flex-grow bg-[#fff] rounded-md" style={{boxShadow:"0px 0px 4px silver", marginBottom:"15px"}}>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 ">
+      <div className=" text-white px-3 py-8 flex-grow bg-[#fff] rounded-md" style={{boxShadow:"0px 0px 4px silver", marginBottom:"15px"}}>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 min-[900px]:grid-cols-2 min-[1200px]:grid-cols-3 gap-4">
           {/* Left Side */}
-          <div className="space-y-6 min-w-0">
-            {/* Balance Type Dropdown */}
-            <div>
-              <label className="block mb-2 text-md text-[#26a69a]">Balance Type</label>
-              <select className="w-full text-[gray] border border-[gray]/40 rounded px-4 py-2 focus:outline-none">
-                <option className="text-[gray]">Available Balance</option>
-              </select>
-              <p className="mt-2 text-sm text-[#000] break-words ">
-                Total Available Balance : 0.00
-              </p>
-            </div>
+        <div className="space-y-6 min-w-0 border-2 border-black/10 p-1 px-5 py-4">
+  {/* Balance Type Dropdown */}
+  <div className="">
+    <label className="block mb-2 text-md text-[#26a69a]">Balance Type</label>
+    <select className="w-full text-[gray] border border-[gray]/40 rounded px-4 py-2 focus:outline-none md:w-[90%] lg:w-full sm:w-[60%]  xs:[60%]">
+      <option className="text-[gray]">Available Balance</option>
+    </select>
+    <p className="mt-2 text-sm text-[#000] break-words">
+      Total Available Balance : 0.00
+    </p>
+  </div>
 
-            {/* Currency and Amount Inputs */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block mb-2 text-md text-[#26a69a]">Payment Currency</label>
-                <button className="w-[90%] bg-[#c5d82e] text-black font-medium py-2 rounded text-md">
-                  INR
-                </button>
-              </div>
-              <div>
-                <label className="block mb-2 text-md text-[#000]  ">Amount</label>
-                <input
-                  type="number"
-                  placeholder="Enter Amount ₹"
-                  value={amount}
-                  onChange={(e) => setAmount(e.target.value)}
-                  className={`w-full bg-transparent border rounded px-4 py-2 focus:outline-none text-[#000] text-[14px] placeholder-[gray]/40 focus:outline-none focus:ring-2 focus:ring-[#4ecdc4] transition ${errors.amount ? "border-white-500" : "border-white-500"
-                    }`}
-                />
-                {errors.amount && (
-                  <p className="text-red-500 text-xs mt-1">{errors.amount}</p>
-                )}
-              </div>
-            </div>
+  {/* Currency and Amount Inputs */}
+  <div className="space-y-4">
+    {/* Currency Label and Button Side-by-Side */}
+    <div className="flex flex-wrap items-center gap-4 w-full sm:w-[90%] md:w-[80%]">
+      <label className="text-md text-[#26a69a] whitespace-nowrap">Payment Currency</label>
+      <button className="bg-[#c5d82e] text-black font-medium py-2 px-6 rounded text-md">
+        INR
+      </button>
+    </div>
 
+    {/* Amount Input */}
+    <div className="w-full sm:w-[50%] md:w-[90%] lg:w-full xs:w-[50%]">
+      <label className="block mb-2 text-md text-[#000]">Amount</label>
+      <input
+        type="number"
+        placeholder="Enter Amount ₹"
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
+        className={`w-full bg-transparent border rounded px-4 py-2 focus:outline-none text-[#000] text-[14px] placeholder-[gray]/40 focus:outline-none focus:ring-2 focus:ring-[#4ecdc4] transition ${
+          errors.amount ? "border-white-500" : "border-white-500"
+        }`}
+      />
+      {errors.amount && (
+        <p className="text-red-500 text-xs mt-1">{errors.amount}</p>
+      )}
+    </div>
+  </div>
 
-            {/* Fee Summary */}
-            <div className="text-sm text-[#000] space-y-2">
-              <div className="flex justify-between py-2 border-b border-gray-600">
-                <span>Fees</span>
-                <span>0</span>
-              </div>
-              <div className="flex justify-between py-2 border-b border-gray-600">
-                <span>Will Get</span>
-                <span>0</span>
-              </div>
-            </div>
+  {/* Fee Summary */}
+  <div className="text-sm text-[#000] space-y-2 w-full sm:w-[90%] xs:w-[60%]">
+    <div className="flex justify-between py-2 border-b border-gray-600">
+      <span>Fees</span>
+      <span>0</span>
+    </div>
+    <div className="flex justify-between py-2 border-b border-gray-600">
+      <span>Will Get</span>
+      <span>0</span>
+    </div>
+  </div>
 
-            <button
-              type="button"
-              onClick={handleConfirm}
-              className="w-full bg-[#26a69a] hover:bg-[#1e857b] text-white font-semibold px-6 py-3 rounded-full hover:from-[#0a5c64] hover:to-[#5dd5cd] transition"
-            >
-              Confirm Password
-            </button>
-          </div>
-
+  {/* Confirm Button (centered, fixed width) */}
+  <div className="flex justify-center">
+    <button
+      type="button"
+      onClick={handleConfirm}
+      className="bg-[#26a69a] hover:bg-[#1e857b] text-white font-semibold px-6 py-3 rounded-full hover:from-[#0a5c64] hover:to-[#5dd5cd] transition w-[250px] max-w-full"
+    >
+      Confirm Password
+    </button>
+  </div>
+</div>
           {/* Center - Bank Details */}
-          <div className="border-r border-l border-[#000]/600 pl-6 min-w-0 text-[#000]">
+          <div className=" pl-6 min-w-0 text-[#000] border-2 border-black/10 px-4 py-4">
             <h2 className="text-lg font-bold mb-6 text-[#26a69a]">Bank Details</h2>
             <p className="mb-3 truncate">Bank Holder Name</p>
             <p className="mb-3 truncate">Bank Account Number</p>
@@ -241,7 +246,7 @@ const WithDrawal = () => {
           </div>
 
           {/* Right - Terms & Conditions */}
-          <div className="min-w-0 text-[#000]">
+          <div className="min-w-0 text-[#000] min-[900px]:col-span-2 min-[1200px]:col-span-1 border-2 border-black/10 pl-4 pr-6 py-4">
             <h2 className="text-lg font-bold mb-6 text-[#26a69a] ">Terms & Conditions</h2>
             <ul className="list-decimal space-y-3 pl-5 text-sm text-justify">
               <li>

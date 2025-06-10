@@ -147,11 +147,10 @@ const TeamCollaboration = () => {
             {members.map((member, idx) => (
               <li
                 key={idx}
-                className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0"
-              >
-                <div className="flex items-center space-x-4">
+                className="flex items-center justify-between sm:gap-4 flex-wrap w-full overflow-hidden">
+                <div className="flex-1 items-center">
                   <div
-                    className={`w-12 h-12 rounded-full ${member.bg} flex items-center justify-center`}
+                    className={`w-12 h-12 rounded-full ${member.bg} flex flex-col items-center justify-center`}
                   >
                     <img
                       src={member.avatar}

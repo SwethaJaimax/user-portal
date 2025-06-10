@@ -84,7 +84,7 @@ const Support = ({ list }) => {
           "radial-gradient(circle at 50% 30%, #20934a 0%,rgb(65, 187, 174) 70%)",
       }}
     >
-      <div className={styles.header}>
+<div className={styles.header}>
   <h2 className={styles.title}>Support Tickets</h2>
   <div className={styles.actions}>
     <button className={styles.createBtn}>Create New</button>
@@ -94,8 +94,9 @@ const Support = ({ list }) => {
         placeholder="Search Ticket ID or Status"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="bg-transparent text-white placeholder-white focus:outline-none flex-grow"
-        style={{ fontSize: "0.85rem", padding: "4px 8px", color: "white" }}
+        className="bg-transparent text-white placeholder-white focus:outline-none flex-grow width: 100%    
+    minWidth: 0"
+        style={{ fontSize: "0.85rem", padding: "4px 4px", color: "white" }}
       />
       <Search className={styles.searchIcon} size={16} />
     </div>

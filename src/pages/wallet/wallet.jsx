@@ -104,101 +104,105 @@ const Wallet = () => {
 
       <div className="w-full flex flex-col gap-4">
         {/* Cards Section */}
-        <div className="p-4">
-          <div className="flex max-lg:flex-col gap-6">
-            {/* Wallet Balance Card */}
-            <div className="flex-1 relative group p-6 rounded-xl shadow-lg bg-white overflow-hidden transition duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] col-span-1 lg:col-span-2 flex flex-col justify-between">
-              {["circle", "diamond"].map((shape, i) => (
-                <div
-                  key={i}
-                  style={{
-                    ...shapeBaseStyles,
-                    ...shapeStyles[shape],
-                    ...shapePositions[i],
-                  }}
-                  className="group-hover:opacity-100 opacity-30"
-                />
-              ))}
-              <div className="flex flex-col md:flex-row justify-between items-center text-[#084e54] z-10">
-                <div className="flex items-center gap-4 sm:mb-0">
-                  <div className="w-16 h-16  rounded-full flex items-center justify-center border-2 border-[#20934a] shadow-md">
-                    <img
-                      src={assets.walletBal}
-                      alt="Wallet Icon"
-                      className="w-12 h-12 object-contain"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-sm">Wallet Balance</p>
-                    <p className="text-2xl font-bold">₹0.00</p>
-                  </div>
-                </div>
-
-                <div className="text-right">
-                  <h1 className="font-bold mb-2">Add Money to Wallet</h1>
-                  <button
-                    className="w-full text-white font-semibold px-6 py-3 rounded-full"
-                    style={{ background: "#20934a" }}
-                  >
-                    ADD FUNDS
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Referral Card */}
-            <div className="flex-1 relative group bg-white p-6 rounded-xl shadow-lg text-[#084e54] overflow-hidden transition duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] flex flex-col justify-center items-center ">
-              {["circle", "diamond"].map((shape, i) => (
-                <div
-                  key={i}
-                  style={{
-                    ...shapeBaseStyles,
-                    ...shapeStyles[shape],
-                    ...shapePositions[i],
-                  }}
-                  className="group-hover:opacity-100 opacity-30"
-                />
-              ))}
-              <div className="z-10 text-center w-full">
-                <TextField
-                  fullWidth
-                  label="Referral Code"
-                  value="JMXA4557jXXN"
-                  InputProps={{
-                    readOnly: true,
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <FaShareAlt
-                          onClick={() => setShowShare(true)}
-                          style={{ cursor: "pointer", color: "#20934a" }}
-                        />
-                      </InputAdornment>
-                    ),
-                  }}
-                  variant="outlined"
-                  size="small"
-                  sx={{
-                    input: { color: "#20934a", fontWeight: 600 },
-                    label: {
-                      color: "#084e54",
-                      "&.Mui-focused": { color: "#084e54" },
-                    },
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": { borderColor: "#000" },
-                      "&:hover fieldset": { borderColor: "#084e54" },
-                      "&.Mui-focused fieldset": { borderColor: "#000" },
-                    },
-                  }}
-                />
-              </div>
-            </div>
+       <div className="p-4">
+  <div className="flex flex-col gap-4 w-full">
+    
+    {/* Wallet Balance Card */}
+    <div className="w-full relative group p-6 rounded-xl shadow-lg bg-white overflow-hidden transition duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] flex flex-col justify-between">
+      {["circle", "diamond"].map((shape, i) => (
+        <div
+          key={i}
+          style={{
+            ...shapeBaseStyles,
+            ...shapeStyles[shape],
+            ...shapePositions[i],
+          }}
+          className="group-hover:opacity-100 opacity-30"
+        />
+      ))}
+      <div className="flex justify-between items-center flex-wrap gap-4 text-[#084e54] z-10">
+        <div className="flex items-center gap-4">
+          <div className="w-16 h-16 rounded-full flex items-center justify-center border-2 border-[#20934a] shadow-md">
+            <img
+              src={assets.walletBal}
+              alt="Wallet Icon"
+              className="w-12 h-12 object-contain"
+            />
+          </div>
+          <div>
+            <p className="text-sm">Wallet Balance</p>
+            <p className="text-2xl font-bold">₹0.00</p>
           </div>
         </div>
 
+        <div className="flex flex-col items-center w-full mt-4">
+  <span className="font-bold text-sm sm:text-base text-center">Add Money to Wallet</span>
+  <button
+    className="mt-2 text-white font-semibold px-6 py-2 rounded-full text-sm"
+    style={{ background: "#20934a" }}
+  >
+    ADD FUNDS
+  </button>
+</div>
+      </div>
+    </div>
+
+    {/* Referral Card */}
+    <div className="w-full relative group bg-white p-6 rounded-xl shadow-lg text-[#084e54] overflow-hidden transition duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] flex flex-col justify-center">
+      {["circle", "diamond"].map((shape, i) => (
+        <div
+          key={i}
+          style={{
+            ...shapeBaseStyles,
+            ...shapeStyles[shape],
+            ...shapePositions[i],
+          }}
+          className="group-hover:opacity-100 opacity-30"
+        />
+      ))}
+      <div className="z-10 w-full">
+        <TextField
+          fullWidth
+          label="Referral Code"
+          value="JMXA4557jXXN"
+          InputProps={{
+            readOnly: true,
+            endAdornment: (
+              <InputAdornment position="end">
+                <FaShareAlt
+                  onClick={() => setShowShare(true)}
+                  style={{ cursor: "pointer", color: "#20934a" }}
+                />
+              </InputAdornment>
+            ),
+          }}
+          variant="outlined"
+          size="small"
+          sx={{
+            input: { color: "#20934a", fontWeight: 600 },
+            label: {
+              color: "#084e54",
+              "&.Mui-focused": { color: "#084e54" },
+            },
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": { borderColor: "#000" },
+              "&:hover fieldset": { borderColor: "#084e54" },
+              "&.Mui-focused fieldset": { borderColor: "#000" },
+            },
+          }}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+
         {/* ✅ Scrollable Table Only */}
-        <div className="px-2 pb-10 max-sm:min-w-[330px] max-sm:w-[400px] w-[100%] max-sm:overflow-x-auto">
-            <TransactionDetails list={transactionData} />
-        </div>
+        <div className="w-full overflow-x-auto px-2 pb-10">
+  <div className="min-w-full sm:min-w-0">
+    <TransactionDetails list={transactionData} />
+  </div>
+</div>
       </div>
 
       {/* Share Modal */}

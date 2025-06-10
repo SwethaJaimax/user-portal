@@ -34,7 +34,7 @@
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
-  /* fixed layout for stable columns */
+ 
 }
 
 .thead {

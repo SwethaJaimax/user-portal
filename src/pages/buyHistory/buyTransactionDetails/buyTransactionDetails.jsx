@@ -68,14 +68,13 @@ const TransactionDetails = ({ data }) => {
           Team Transactions
         </h2>
 
-        <div className="flex items-center rounded-xl border border-white px-3 py-1.5 w-72 focus-within:border-2 focus-within:border-[#f2f2f2] transition-all duration-200">
+<div className="flex items-center border border-white rounded-xl px-3 py-2 sm:w-60 focus-within:border-2 focus-within:border-white transition-all duration-200 shadow-sm bg-white/10 backdrop-blur">
           <input
             type="text"
             placeholder="Search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="bg-transparent text-white placeholder-white focus:outline-none flex-grow"
-            style={{ fontSize: "0.85rem", padding: "4px 8px", color: "white" }}
+            className="bg-transparent text-white placeholder-white focus:outline-none flex-grow text-sm"
           />
           <Search className="text-white" size={16} />
         </div>

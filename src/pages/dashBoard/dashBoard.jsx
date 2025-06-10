@@ -1,12 +1,12 @@
 import ActionButtons from "./actionComponent/actionCompent";
 import TopCards from "./cards/cards";
 import TeamCollaboration from "./teamWorkPanel/teamWorkPanel";
+import SlabTabs from "./timeTracker/timeTracker";
 import TimeTracker from "./timeTracker/timeTracker";
 
 const Dashboard = () => {
   return (
-<div className="min-h-screen w-full p-2 sm:p-3 md:p-4 text-sm sm:text-base md:text-lg bg-white">
-
+<div className="min-h-screen w-full p-2 sm:p-3 md:p-4 text-sm sm:text-base md:text-lg overflow-x-hidden">
   {/* Action Buttons */}
   <div className="w-full mb-4">
     <ActionButtons />
@@ -17,16 +17,15 @@ const Dashboard = () => {
     <TopCards />
   </div>
 
-  {/* TimeTracker and TeamCollaboration side-by-side on md+ */}
-  <div className="flex flex-col md:flex-row gap-4 w-full">
-    <div className="flex-1">
-      <TimeTracker />
+  {/* TimeTracker and TeamCollaboration side-by-side on 1080px+ */}
+  <div className="flex flex-col custom-1080:flex-row w-full custom-1080:gap-4 gap-2 overflow-hidden">
+    <div className="w-full custom-1080:w-1/2">
+      <SlabTabs />
     </div>
-    <div className="flex-1">
+    <div className="w-full custom-1080:w-1/2 overflow-hidden">
       <TeamCollaboration />
     </div>
   </div>
-  
 </div>
 
 

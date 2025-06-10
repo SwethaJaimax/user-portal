@@ -53,26 +53,31 @@ const TransactionDetails = ({ list }) => {
       }}
     >
       {/* Header */}
-      <div className={styles.header} style={{ marginBottom: "12px" }}>
-        <h2
-          className={styles.title}
-          style={{ fontSize: "1.1rem", color: "#084e54" }}
-        >
-          Team Transactions
-        </h2>
+      <div
+  className={`${styles.header} flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2`}
+  style={{ marginBottom: "12px" }}
+>
+  <h2
+    className={styles.title}
+    style={{ fontSize: "1.1rem", color: "#084e54" }}
+  >
+    Team Transactions
+  </h2>
 
-        <div className="flex items-center rounded-xl border border-white px-3 py-1.5 w-72 focus-within:border-2 focus-within:border-[#f2f2f2] transition-all duration-200">
-          <input
-            type="text"
-            placeholder="Search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            className="bg-transparent text-white placeholder-white focus:outline-none flex-grow"
-            style={{ fontSize: "0.85rem", padding: "4px 8px", color: "white" }}
-          />
-          <Search className="text-white" size={16} />
-        </div>
-      </div>
+ <div className="flex items-center rounded-xl border border-white px-3 py-1.5 w-full max-w-sm sm:max-w-xs md:max-w-[200px] lg:max-w-[288px] transition-all duration-200">
+
+    <input
+      type="text"
+      placeholder="Search"
+      value={query}
+      onChange={(e) => setQuery(e.target.value)}
+      className="bg-transparent text-white placeholder-white focus:outline-none flex-grow"
+      style={{ fontSize: "0.85rem", padding: "4px 8px", color: "white" }}
+    />
+    <Search className="text-white" size={16} />
+  </div>
+</div>
+
 
       {paginatedList.length > 0 ? (
         <>

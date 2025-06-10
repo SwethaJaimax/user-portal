@@ -13,6 +13,7 @@ import Support from "./pages/support/support";
 import Sidebar from "./components/sildeBar/Sidebar";
 import Header from "./components/header/header";
 import LogoutModal from "./pages/logout/logout";
+import Shareholders from "./pages/shareholders/shareholders";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -57,7 +58,7 @@ function App() {
     //     />
     //   )}
     // </div>
-    <div className="relative flex bg-white h-screen">
+    <div className="relative flex h-screen bg-white overflow-hidden">
 
     <Sidebar
       isOpen={sidebarOpen}
@@ -68,16 +69,22 @@ function App() {
 
   {/* Main Content */}
   <div
-    className={`transition-all duration-300 ease-in-out flex-1  ${
-      sidebarOpen ? "lg:ml-64" : "lg:ml-20"
-    }`}
+    className={`transition-all duration-300 ease-in-out flex-1 flex flex-col mr-3 ${
+      sidebarOpen ? "lg:ml-64" : "lg:ml-5"
+    } h-screen overflow-hidden`}
   >
-    <Header />
-    <div className="p-4 bg-[#f2f2f2] min-h-[calc(100vh-64px)] rounded-xl">
+    {/* Header with top margin */}
+    <div className="mt-6 mb-3">
+      <Header />
+    </div>
+
+    {/* Scrollable content below header */}
+    <div className="flex-1 overflow-y-auto p-4 bg-[#f2f2f2] rounded-xl scrollbar-hide mb-3 mt-1">
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/wallet" element={<Wallet />} />
         <Route path="/my-team" element={<MyTotalTeam />} />
+        <Route path="/shareholders" element={<Shareholders/>}/>
         <Route path="/buy-history" element={<BuyHistory />} />
         <Route path="/security" element={<Security />} />
         <Route path="/profile" element={<Profile />} />

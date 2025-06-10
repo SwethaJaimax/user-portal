@@ -4,6 +4,7 @@ const routeTitles = {
   "/": "Dashboard",
   "/wallet": "Wallet",
   "/my-team": "My Total Team",
+  "/shareholders": "Share Holders",
   "/buy-history": "Buy History",
   "/security": "Security",
   "/profile": "Profile",

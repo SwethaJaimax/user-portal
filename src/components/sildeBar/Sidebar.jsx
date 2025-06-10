@@ -167,11 +167,13 @@ import {
   HiOutlineLogout,
 } from "react-icons/hi";
 import { useState, useEffect } from "react";
+import { FaHandshake } from "react-icons/fa";
 
 const navItems = [
   { name: "Dashboard", path: "/", icon: <HiOutlineViewGrid /> },
   { name: "Wallet", path: "/wallet", icon: <HiOutlineClipboardList /> },
   { name: "My Total Team", path: "/my-team", icon: <HiOutlineCalendar /> },
+  {name:"Share Holders", path:"/shareholders", icon:<FaHandshake />},
   { name: "Buy History", path: "/buy-history", icon: <HiOutlineChartBar /> },
   { name: "Security", path: "/security", icon: <HiOutlineShieldCheck /> },
   { name: "Profile", path: "/profile", icon: <HiOutlineUser /> },

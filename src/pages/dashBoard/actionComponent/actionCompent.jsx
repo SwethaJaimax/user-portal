@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 import { FaDownload, FaShareAlt } from "react-icons/fa";
 import {
   FaFacebook,
@@ -122,7 +122,7 @@ const ActionButtons = () => {
           </div>
 
           {/* Right */}
-          <div className="flex flex-col sm:flex-row items-center sm:items-center gap-3 w-full sm:w-auto lg:justify-end text-center sm:text-left">
+          <div className="flex flex-col sm:flex-row items-center sm:items-center gap-3 w-full sm:w-auto lg:justify-end">
             <TextField
               label="Referral Code"
               value="JMXA4557jXXN"
@@ -163,7 +163,7 @@ const ActionButtons = () => {
             />
 
             <button
-              className="bg-[#26a69a] text-white flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium shadow hover:bg-[#1d8e85] w-full sm:w-auto"
+              className="bg-[#26a69a] text-white flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium shadow hover:bg-[#1d8e85]"
               onClick={handleCopy}
             >
               <FaDownload className="mr-2" /> Add New Member

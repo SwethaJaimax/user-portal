@@ -13,8 +13,15 @@ export default {
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'sans-serif']
-      }
+      },
+      screens: {
+        'custom-md': '900px', // Custom 900px breakpoint
+        xs: '480px',
+        'custom-1080': '1080px',
+      },
+      
     },
   },
   plugins: [],
 }
+
